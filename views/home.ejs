@@ -8,7 +8,7 @@
 <body>
     <%- include('./parts/nav.ejs') %>
     <h1>add your todo 's</h1>
-    <form action="/add" method="post" >
+    <form action="/todos/add" method="post" >
         <input type="text" name="todo" placeholder="todo">
         <input type="submit" value="submit">
     </form>
@@ -16,7 +16,7 @@
     <div id="root">
     <% todos.forEach(todo => { %>
     <div class="todo">
-        <h2><%= todo.user %></h2>
+        <h2><%= user.userName %></h2>
         <p><%= todo.todo %></p>
     </div>
 

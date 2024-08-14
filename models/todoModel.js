@@ -1,9 +1,9 @@
-const {Schema,model}=require('mongoose')
+const {Schema,model, Types}=require('mongoose')
 const todoSchema = new Schema(
     {
       todo: { type: String, required: true, },
       status: { type: String, enum: ["done", "pending"], default: "pending" },
-      user: String,
+      user: {type:Types.ObjectId,ref:"user"},
     },
     { timestamps: true }
   );

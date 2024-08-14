@@ -1,8 +1,77 @@
-<nav style="background-color: #333; padding: 10px; display: flex; justify-content: space-between; align-items: center; color: white;">
-    <div style="font-size: 20px; font-weight: bold;">To-Do App</div>
-    <div>
-        <a href="/" style="color: white; text-decoration: none; padding: 0 15px; font-size: 16px;">Home</a>
-        <a href="/login" style="color: white; text-decoration: none; padding: 0 15px; font-size: 16px;">login</a>
-        <a href="/register" style="color: white; text-decoration: none; padding: 0 15px; font-size: 16px;">register</a>
-    </div>
+<nav
+  style="
+    background-color: #333;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+  "
+>
+  <div style="font-size: 20px; font-weight: bold">To-Do App</div>
+  <div style="display: flex;">
+    <a
+      href="/todos"
+      style="
+        color: white;
+        text-decoration: none;
+        padding: 0 15px;
+        font-size: 16px;
+      "
+      >Home</a
+    >
+    <a
+      class="login"
+      href="/user/login"
+      style="
+        color: white;
+        text-decoration: none;
+        padding: 0 15px;
+        font-size: 16px;
+      "
+      >login</a
+    >
+    <a
+      class="login"
+      href="/user/register"
+      style="
+        color: white;
+        text-decoration: none;
+        padding: 0 15px;
+        font-size: 16px;
+      "
+      >register</a
+    >
+    <a
+      class="logout"
+      href="/user/logout"
+      style="
+        color: white;
+        text-decoration: none;
+        padding: 0 15px;
+        font-size: 16px;
+      "
+      >logout</a
+    >
+  </div>
 </nav>
+<script>
+  const login = document.getElementsByClassName("login");
+  const logout = document.getElementsByClassName("logout")[0];
+  const cookie = document.cookie.length;
+  console.log(login);
+  
+  for (let i = 0; i < login.length; i++) {
+    if (cookie) {
+      login[i].style.display = "none";
+    } else {
+        login[i].style.display = "block";
+    }
+  }
+
+  if (cookie) {
+    logout.style.display = "block";
+  } else {
+    logout.style.display = "none";
+  }
+</script>
